@@ -5,7 +5,7 @@ end
 def create
   @contact = Contact.new(contact_params)
   if @contact.save
-    name = params[:contact][:name]//lift things from form fields
+    name = params[:contact][:name]
     email = params[:contact][:email]
     body = params[:contact][:comments]
     ContactMailer.contact_email(name, email, body).deliver
